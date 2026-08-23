@@ -1,3 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Demo | Assurant</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f7f9fc;
+            color: #333;
+        }
+
+        /* ================================
+           HEADER
+        ================================= */
+        header {
+            height: 76px;
+            background: #ffffff;
+            border-bottom: 1px solid #e8ebef;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+        }
+
+        /* 
+           LOGO LOCATION
+           Replace "logo.png" with your PNG file.
+        */
+        .logo {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .demo-label {
+            font-size: 13px;
+            color: #77777b;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+
+        /* ================================
+           HERO
+        ================================= */
+        .hero {
+            min-height: calc(100vh - 76px);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 60px 20px;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-block;
+
+            color: #005cb9;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.05;
+            font-weight: 700;
+
+            color: #333;
+            margin-bottom: 22px;
+        }
+
+        h1 span {
+            color: #005cb9;
+        }
+
+        .subtitle {
+            max-width: 650px;
+            margin: 0 auto 38px;
+
+            font-size: 18px;
+            line-height: 1.7;
+            color: #77777b;
+        }
+
+
+        /* ================================
+           DEMO CARD
+        ================================= */
+        .demo-card {
+            background: #ffffff;
+
+            max-width: 700px;
+            margin: 0 auto;
+
+            padding: 42px;
+
+            border-radius: 18px;
+
+            border: 1px solid #e5e9ef;
+
+            box-shadow:
+                0 15px 45px rgba(0, 40, 80, 0.08);
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Small Assurant-inspired accent */
+        .demo-card::before {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 4px;
+
+            background: linear-gradient(
+                90deg,
+                #005cb9 0%,
+                #005cb9 40%,
+                #3baf29 70%,
+                #ffa409 100%
+            );
+        }
+
+        .product-icon {
+            width: 64px;
+            height: 64px;
+
+            margin: 0 auto 22px;
+
+            border-radius: 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 27px;
+            font-weight: bold;
+
+            color: #ffffff;
+
+            background: linear-gradient(
+                135deg,
+                #005cb9,
+                #3baf29
+            );
+        }
+
+        .demo-card h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .demo-card p {
+            color: #77777b;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+
+        /* ================================
+           BUTTON
+        ================================= */
+        .demo-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 14px 30px;
+
+            background: #005cb9;
+            color: #ffffff;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-size: 15px;
+            font-weight: 600;
+
+            transition: all 0.25s ease;
+
+            box-shadow: 0 8px 20px rgba(0, 92, 185, 0.18);
+        }
+
+        .demo-button:hover {
+            background: #004d9c;
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 25px rgba(0, 92, 185, 0.25);
+        }
+
+
+        /* ================================
+           FEATURES
+        ================================= */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+
+            margin-top: 32px;
+
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            font-size: 13px;
+            color: #77777b;
+        }
+
+        .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+        }
+
+        .blue {
+            background: #005cb9;
+        }
+
+        .green {
+            background: #3baf29;
+        }
+
+        .orange {
+            background: #ffa409;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+        footer {
+            position: fixed;
+            bottom: 18px;
+            left: 0;
+            width: 100%;
+
+            text-align: center;
+
+            font-size: 12px;
+            color: #a0a3a8;
+        }
+
+
+        /* ================================
+           MOBILE
+        ================================= */
+        @media (max-width: 600px) {
+
+            header {
+                padding: 0 20px;
+            }
+
+            .logo {
+                height: 40px;
+            }
+
+            .demo-label {
+                display: none;
+            }
+
+            .hero {
+                padding: 40px 18px 70px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .demo-card {
+                padding: 32px 22px;
+            }
+
+            .demo-card h2 {
+                font-size: 24px;
+            }
+
+            footer {
+                position: relative;
+                margin-top: 10px;
+                padding-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =================================
+         HEADER
+    ================================== -->
+    <header>
+
+        <!--
+            ===============================
+            LOGO FILE LOCATION
+            ===============================
+
+            Put your PNG logo in the same folder
+            as this HTML file and name it:
+
+                logo.png
+
+            Or change the src below to your file.
+        -->
+
+        <img
+            src="assurantLogo01.png"
+            alt="Assurant"
+            class="logo"
+        >
+
+        <div class="demo-label">
+            Product Demonstration
+        </div>
+
+    </header>
+
+
+    <!-- =================================
+         MAIN HERO
+    ================================== -->
+    <main class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Product Demonstration
+            </div>
+
+            <h1>
+                Smarter. Simpler.<br>
+                <span>Built for What's Next.</span>
+            </h1>
+
+            <p class="subtitle">
+                Welcome to the product demonstration.
+                Explore how our solution can simplify operations,
+                improve visibility, and deliver better outcomes.
+            </p>
+
+
+            <!-- =================================
+                 PRODUCT CARD
+            ================================== -->
+
+            <div class="demo-card">
+
+                <div class="product-icon">
+                    P
+                </div>
+
+                <h2>
+                    Product Name
+                </h2>
+
+                <p>
+                    A short description of the product can be
+                    placed here. Keep this section concise and
+                    focused on the primary value of the solution.
+                </p>
+
+                <a href="#" class="demo-button">
+                    Launch Demo
+                    <span style="margin-left: 10px;">→</span>
+                </a>
+
+            </div>
+
+
+            <!-- =================================
+                 FEATURES
+            ================================== -->
+
+            <div class="features">
+
+                <div class="feature">
+                    <span class="dot blue"></span>
+                    Easy to use
+                </div>
+
+                <div class="feature">
+                    <span class="dot green"></span>
+                    Real-time insights
+                </div>
+
+                <div class="feature">
+                    <span class="dot orange"></span>
+                    Enterprise ready
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        Product Demo · Confidential
+    </footer>
+  <script type="text/javascript">
+      (function(w, d, x, id){
+        s=d.createElement('script');
+        s.src='https://assurant-demo.my.connect.aws/connectwidget/static/amazon-connect-chat-interface-client.js';
+        s.async=1;
+        s.id=id;
+        d.getElementsByTagName('head')[0].appendChild(s);
+        w[x] =  w[x] || function() { (w[x].ac = w[x].ac || []).push(arguments) };
+      })(window, document, 'amazon_connect', '1747b33a-3582-4197-8b3f-b7f2c7ed3ede');
+      amazon_connect('styles', { iconType: 'CHAT_VOICE', openChat: { color: '#ffffff', backgroundColor: '#123456' }, closeChat: { color: '#ffffff', backgroundColor: '#123456'} });
+      amazon_connect('snippetId', 'QVFJREFIZ1cvRGNBazlnT0Y4cm14c1pGNjJGUUlJUGtDaVBaTk1KL2tEYmFlRFpPTmdGbGNIdW1LTVNFWWIxQUJsZGF5VlpxQUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNNUZyZUttRnl0c3dFcmJKZUFnRVFnQ3NqVWdZUksrajRLQVFFcThIK2dGYXBNWXgvWk5JYU82NmFBTmFYaEJVK0hpZmlKMWtsUExlN0cxc3Q6OjIzeEk0NFN5L3hpcGlGeTIxUGlIMG81WHFwcGJIZ0VCbWNNbmYzQ24vMmRJYVVDYlVDblBRQUREK2lUV2dVdytYbnhBWnhqdUVyZnY1bUptMjhBVEVHRE50SVByVi9rTHBsZXV1dzdnQlk2RkZaZElnOWxQTGhvT2NldUxNaStQdmdOSndvaS9FTUNWVDN0RGYxNGdqbWlFNmsxeUY0ND0=');
+      amazon_connect('supportedMessagingContentTypes', [ 'text/plain', 'text/markdown', 'application/vnd.amazonaws.connect.message.interactive', 'application/vnd.amazonaws.connect.message.interactive.response' ]);
+      amazon_connect('dataTrackingConfig', {enabled: true, advancedTracking: true});
+      amazon_connect('webNotificationConfig', {enabled: true});
+    </script>
+
+</body>
+</html>
+
+
+<!-- 
 <html>
   <body>
     <h1>Assurant demo bot</h1>
@@ -17,4 +473,4 @@
       amazon_connect('webNotificationConfig', {enabled: true});
     </script>
   </body>
-</html>
+</html> -->
