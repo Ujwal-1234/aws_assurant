@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Product Demo | Assurant</title>
+    <title>Assurant | Product Demonstration</title>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -15,425 +20,742 @@
 
         body {
             font-family: "Segoe UI", Arial, sans-serif;
-            background: #f7f9fc;
+
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 50% 35%,
+                    rgba(0, 92, 185, 0.07),
+                    transparent 35%
+                ),
+                #f7f9fc;
+
             color: #333;
         }
 
-        /* ================================
+
+        /* =====================================
            HEADER
-        ================================= */
+        ===================================== */
+
         header {
-            height: 76px;
-            background: #ffffff;
-            border-bottom: 1px solid #e8ebef;
+
+            height: 72px;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            padding: 0 7%;
+            padding: 0 6%;
+
+            background: rgba(255,255,255,0.92);
+
+            border-bottom: 1px solid #e7ebf0;
         }
 
-        /* 
-           LOGO LOCATION
-           Replace "logo.png" with your PNG file.
-        */
-        .logo {
-            height: 48px;
+
+        /* Small logo in header */
+
+        .header-logo {
+
+            height: 38px;
             width: auto;
+
             object-fit: contain;
         }
 
-        .demo-label {
-            font-size: 13px;
-            color: #77777b;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
 
-
-        /* ================================
-           HERO
-        ================================= */
-        .hero {
-            min-height: calc(100vh - 76px);
+        .header-right {
 
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 9px;
 
-            padding: 60px 20px;
+            font-size: 12px;
+
+            color: #77777b;
+
+            letter-spacing: 1.2px;
+
+            text-transform: uppercase;
         }
 
-        .hero-content {
+
+        .status-dot {
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #3baf29;
+        }
+
+
+
+        /* =====================================
+           MAIN
+        ===================================== */
+
+        main {
+
+            min-height: calc(100vh - 72px);
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 50px 20px;
+        }
+
+
+        .container {
+
             width: 100%;
-            max-width: 900px;
+
+            max-width: 1100px;
+
             text-align: center;
         }
 
+
+
+        /* =====================================
+           TOP LABEL
+        ===================================== */
+
         .eyebrow {
-            display: inline-block;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 8px 15px;
+
+            border-radius: 50px;
+
+            background: rgba(0, 92, 185, 0.06);
+
+            border: 1px solid rgba(0, 92, 185, 0.12);
 
             color: #005cb9;
-            font-size: 13px;
+
+            font-size: 12px;
+
             font-weight: 600;
-            letter-spacing: 2px;
+
+            letter-spacing: 1.8px;
+
             text-transform: uppercase;
 
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: clamp(42px, 6vw, 72px);
-            line-height: 1.05;
-            font-weight: 700;
-
-            color: #333;
-            margin-bottom: 22px;
-        }
-
-        h1 span {
-            color: #005cb9;
-        }
-
-        .subtitle {
-            max-width: 650px;
-            margin: 0 auto 38px;
-
-            font-size: 18px;
-            line-height: 1.7;
-            color: #77777b;
+            margin-bottom: 25px;
         }
 
 
-        /* ================================
-           DEMO CARD
-        ================================= */
-        .demo-card {
+        .eyebrow svg {
+
+            width: 15px;
+            height: 15px;
+        }
+
+
+
+        /* =====================================
+           CENTER LOGO AREA
+        ===================================== */
+
+        .logo-area {
+
+            width: 340px;
+            height: 180px;
+
+            margin: 0 auto 30px;
+
             background: #ffffff;
 
-            max-width: 700px;
-            margin: 0 auto;
+            border-radius: 22px;
 
-            padding: 42px;
+            border: 1px solid #e1e6ec;
 
-            border-radius: 18px;
+            display: flex;
 
-            border: 1px solid #e5e9ef;
-
-            box-shadow:
-                0 15px 45px rgba(0, 40, 80, 0.08);
+            align-items: center;
+            justify-content: center;
 
             position: relative;
+
+            box-shadow:
+                0 20px 55px rgba(0, 45, 90, 0.10);
+
             overflow: hidden;
         }
 
-        /* Small Assurant-inspired accent */
-        .demo-card::before {
+
+        /*
+            =====================================
+            YOUR LARGE LOGO GOES HERE
+            =====================================
+
+            Put your PNG in the same folder:
+
+                logo.png
+
+            Then this image will automatically
+            appear in the center.
+        */
+
+        .logo-area img {
+
+            max-width: 270px;
+
+            max-height: 130px;
+
+            width: auto;
+
+            height: auto;
+
+            object-fit: contain;
+        }
+
+
+        /*
+            Decorative color line
+        */
+
+        .logo-area::after {
+
             content: "";
 
             position: absolute;
-            top: 0;
+
+            bottom: 0;
             left: 0;
 
             width: 100%;
             height: 4px;
 
-            background: linear-gradient(
-                90deg,
-                #005cb9 0%,
-                #005cb9 40%,
-                #3baf29 70%,
-                #ffa409 100%
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    #005cb9 0%,
+                    #005cb9 42%,
+                    #3baf29 70%,
+                    #ffa409 100%
+                );
         }
 
-        .product-icon {
-            width: 64px;
-            height: 64px;
 
-            margin: 0 auto 22px;
 
-            border-radius: 16px;
+        /* =====================================
+           HEADING
+        ===================================== */
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        h1 {
 
-            font-size: 27px;
-            font-weight: bold;
+            font-size: clamp(32px, 5vw, 52px);
 
-            color: #ffffff;
+            line-height: 1.1;
 
-            background: linear-gradient(
-                135deg,
-                #005cb9,
-                #3baf29
-            );
+            font-weight: 650;
+
+            color: #30343a;
+
+            margin-bottom: 15px;
         }
 
-        .demo-card h2 {
-            font-size: 28px;
-            margin-bottom: 12px;
-            color: #333;
+
+        h1 span {
+
+            color: #005cb9;
         }
 
-        .demo-card p {
+
+        .description {
+
+            max-width: 620px;
+
+            margin: 0 auto;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+
             color: #77777b;
-            line-height: 1.6;
-            margin-bottom: 28px;
         }
 
 
-        /* ================================
-           BUTTON
-        ================================= */
-        .demo-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
 
-            padding: 14px 30px;
+        /* =====================================
+           INSURANCE ICONS
+        ===================================== */
 
-            background: #005cb9;
-            color: #ffffff;
+        .insurance-icons {
 
-            border-radius: 8px;
-
-            text-decoration: none;
-
-            font-size: 15px;
-            font-weight: 600;
-
-            transition: all 0.25s ease;
-
-            box-shadow: 0 8px 20px rgba(0, 92, 185, 0.18);
-        }
-
-        .demo-button:hover {
-            background: #004d9c;
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 12px 25px rgba(0, 92, 185, 0.25);
-        }
-
-
-        /* ================================
-           FEATURES
-        ================================= */
-        .features {
             display: flex;
-            justify-content: center;
-            gap: 35px;
 
-            margin-top: 32px;
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 45px;
+
+            margin-top: 38px;
+
+            margin-bottom: 38px;
 
             flex-wrap: wrap;
         }
 
-        .feature {
+
+        .insurance-item {
+
             display: flex;
+
+            flex-direction: column;
+
             align-items: center;
-            gap: 8px;
 
-            font-size: 13px;
+            gap: 9px;
+
             color: #77777b;
+
+            font-size: 11px;
+
+            letter-spacing: 0.5px;
         }
 
-        .dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
+
+        .icon {
+
+            width: 48px;
+            height: 48px;
+
+            border-radius: 14px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #ffffff;
+
+            border: 1px solid #e3e7ec;
+
+            box-shadow:
+                0 8px 22px rgba(0, 40, 80, 0.06);
+
+            transition: 0.25s ease;
         }
 
-        .blue {
+
+        .icon svg {
+
+            width: 21px;
+            height: 21px;
+
+            color: #005cb9;
+        }
+
+
+        .insurance-item:nth-child(2) .icon svg {
+            color: #3baf29;
+        }
+
+
+        .insurance-item:nth-child(3) .icon svg {
+            color: #ffa409;
+        }
+
+
+        .insurance-item:nth-child(4) .icon svg {
+            color: #005cb9;
+        }
+
+
+        .insurance-item:nth-child(5) .icon svg {
+            color: #3baf29;
+        }
+
+
+        .insurance-item:hover .icon {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 12px 25px rgba(0, 40, 80, 0.12);
+        }
+
+
+
+        /* =====================================
+           DEMO BUTTON
+        ===================================== */
+
+        .demo-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 14px 28px;
+
+            border-radius: 8px;
+
             background: #005cb9;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            box-shadow:
+                0 10px 25px rgba(0, 92, 185, 0.20);
+
+            transition: all 0.25s ease;
         }
 
-        .green {
-            background: #3baf29;
+
+        .demo-button svg {
+
+            width: 17px;
+            height: 17px;
         }
 
-        .orange {
-            background: #ffa409;
+
+        .demo-button:hover {
+
+            background: #004d9d;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 14px 30px rgba(0, 92, 185, 0.25);
         }
 
 
-        /* ================================
+
+        /* =====================================
            FOOTER
-        ================================= */
+        ===================================== */
+
         footer {
+
             position: fixed;
-            bottom: 18px;
+
+            bottom: 15px;
+
             left: 0;
+
             width: 100%;
 
             text-align: center;
 
-            font-size: 12px;
-            color: #a0a3a8;
+            font-size: 11px;
+
+            color: #a2a6ab;
         }
 
 
-        /* ================================
+
+        /* =====================================
            MOBILE
-        ================================= */
+        ===================================== */
+
         @media (max-width: 600px) {
 
             header {
+
                 padding: 0 20px;
             }
 
-            .logo {
-                height: 40px;
+
+            .header-logo {
+
+                height: 32px;
             }
 
-            .demo-label {
+
+            .header-right {
+
                 display: none;
             }
 
-            .hero {
-                padding: 40px 18px 70px;
+
+            main {
+
+                padding: 35px 18px 70px;
             }
 
-            .subtitle {
-                font-size: 16px;
+
+            .logo-area {
+
+                width: min(340px, 90vw);
+
+                height: 160px;
             }
 
-            .demo-card {
-                padding: 32px 22px;
+
+            .logo-area img {
+
+                max-width: 240px;
             }
 
-            .demo-card h2 {
-                font-size: 24px;
+
+            .insurance-icons {
+
+                gap: 22px;
             }
+
+
+            .description {
+
+                font-size: 15px;
+            }
+
 
             footer {
+
                 position: relative;
-                margin-top: 10px;
-                padding-bottom: 20px;
+
+                margin-top: 20px;
             }
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- =================================
+
+    <!-- =====================================
          HEADER
-    ================================== -->
+    ===================================== -->
+
     <header>
 
         <!--
-            ===============================
-            LOGO FILE LOCATION
-            ===============================
+            SMALL HEADER LOGO
 
-            Put your PNG logo in the same folder
-            as this HTML file and name it:
-
-                logo.png
-
-            Or change the src below to your file.
+            Put logo.png in this folder.
         -->
 
         <img
             src="assurantLogo01.png"
             alt="Assurant"
-            class="logo"
+            class="header-logo"
         >
 
-        <div class="demo-label">
+
+        <div class="header-right">
+
+            <span class="status-dot"></span>
+
             Product Demonstration
+
         </div>
 
     </header>
 
 
-    <!-- =================================
-         MAIN HERO
-    ================================== -->
-    <main class="hero">
 
-        <div class="hero-content">
+    <!-- =====================================
+         MAIN CONTENT
+    ===================================== -->
+
+    <main>
+
+        <div class="container">
+
+
+            <!-- Label -->
 
             <div class="eyebrow">
-                Product Demonstration
+
+                <i data-lucide="shield-check"></i>
+
+                Insurance Technology
+
             </div>
 
+
+
+            <!-- =================================
+                 LARGE CENTER LOGO
+            ================================== -->
+
+            <div class="logo-area">
+
+                <!--
+                    ==================================
+                    ATTACH YOUR LARGE PNG LOGO HERE
+
+                    Example:
+
+                    <img src="assurant-logo.png">
+
+                    Recommended PNG:
+                    500px - 800px wide
+                    Transparent background
+                    ==================================
+                -->
+
+                <img
+                    src="assurantLogo01.png"
+                    alt="Company Logo"
+                >
+
+            </div>
+
+
+
+            <!-- Heading -->
+
             <h1>
-                Smarter. Simpler.<br>
-                <span>Built for What's Next.</span>
+
+                Protecting What
+                <span>Matters Most.</span>
+
             </h1>
 
-            <p class="subtitle">
-                Welcome to the product demonstration.
-                Explore how our solution can simplify operations,
-                improve visibility, and deliver better outcomes.
+
+            <p class="description">
+
+                A simple demonstration of technology designed
+                to improve protection, visibility, and customer
+                experience across modern insurance services.
+
             </p>
 
 
+
             <!-- =================================
-                 PRODUCT CARD
+                 INSURANCE CATEGORIES
             ================================== -->
 
-            <div class="demo-card">
+            <div class="insurance-icons">
 
-                <div class="product-icon">
-                    P
+
+                <div class="insurance-item">
+
+                    <div class="icon">
+
+                        <i data-lucide="shield-check"></i>
+
+                    </div>
+
+                    Protection
+
                 </div>
 
-                <h2>
-                    Product Name
-                </h2>
 
-                <p>
-                    A short description of the product can be
-                    placed here. Keep this section concise and
-                    focused on the primary value of the solution.
-                </p>
 
-                <a href="#" class="demo-button">
-                    Launch Demo
-                    <span style="margin-left: 10px;">→</span>
-                </a>
+                <div class="insurance-item">
+
+                    <div class="icon">
+
+                        <i data-lucide="home"></i>
+
+                    </div>
+
+                    Home
+
+                </div>
+
+
+
+                <div class="insurance-item">
+
+                    <div class="icon">
+
+                        <i data-lucide="car-front"></i>
+
+                    </div>
+
+                    Mobility
+
+                </div>
+
+
+
+                <div class="insurance-item">
+
+                    <div class="icon">
+
+                        <i data-lucide="heart-pulse"></i>
+
+                    </div>
+
+                    Life & Health
+
+                </div>
+
+
+
+                <div class="insurance-item">
+
+                    <div class="icon">
+
+                        <i data-lucide="lock-keyhole"></i>
+
+                    </div>
+
+                    Security
+
+                </div>
 
             </div>
 
 
+
             <!-- =================================
-                 FEATURES
+                 DEMO BUTTON
             ================================== -->
 
-            <div class="features">
+            <a
+                href="#"
+                class="demo-button"
+            >
 
-                <div class="feature">
-                    <span class="dot blue"></span>
-                    Easy to use
-                </div>
+                Explore the Demo
 
-                <div class="feature">
-                    <span class="dot green"></span>
-                    Real-time insights
-                </div>
+                <i data-lucide="arrow-right"></i>
 
-                <div class="feature">
-                    <span class="dot orange"></span>
-                    Enterprise ready
-                </div>
+            </a>
 
-            </div>
 
         </div>
 
     </main>
 
 
+
     <footer>
-        Product Demo · Confidential
+
+        Product Demonstration · Confidential
+
     </footer>
-  <script type="text/javascript">
+
+
+
+    <!-- Initialize Lucide -->
+
+    <script>
+
+        lucide.createIcons();
+
+    </script>
+    <script type="text/javascript">
       (function(w, d, x, id){
         s=d.createElement('script');
         s.src='https://assurant-demo.my.connect.aws/connectwidget/static/amazon-connect-chat-interface-client.js';
@@ -449,7 +771,9 @@
       amazon_connect('webNotificationConfig', {enabled: true});
     </script>
 
+
 </body>
+
 </html>
 
 
