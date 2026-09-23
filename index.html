@@ -584,7 +584,7 @@
 
                 <i data-lucide="shield-check"></i>
 
-                Insurance Technology
+                Alpen Bank
 
             </div>
 
@@ -749,12 +749,37 @@
 
 
     <!-- Initialize Lucide -->
+
+    <style>
+      /* Move Cognigy Webchat to top-right */
+      [data-cognigy-webchat-root] {
+        top: 20px !important;
+        right: 20px !important;
+        bottom: auto !important;
+        left: auto !important;
+      }
+    
+      [data-cognigy-webchat-root] [data-cognigy-webchat] {
+        top: 20px !important;
+        right: 20px !important;
+        bottom: auto !important;
+        left: auto !important;
+      }
+    </style>
+    
     <script src="https://github.com/Cognigy/Webchat/releases/latest/download/webchat.js"></script>
+    
+    <script>
+      initWebchat(
+        "https://endpoint-trial.cognigy.ai/322b32e28e643256a3367908c6e74f8e0f44db795b434ebe6fc5813728684d57"
+      );
+    </script>
+    <!-- <script src="https://github.com/Cognigy/Webchat/releases/latest/download/webchat.js"></script>
     <script>
     	initWebchat(
     		"https://endpoint-trial.cognigy.ai/322b32e28e643256a3367908c6e74f8e0f44db795b434ebe6fc5813728684d57"
     	);
-    </script>
+    </script> -->
 
     <script>
 
